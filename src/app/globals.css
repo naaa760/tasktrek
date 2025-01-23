@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --coffee-dark: #553c32;
+  --coffee-medium: #8b7355;
+  --coffee-light: #c4a484;
+  --cream: #fffdd0;
+  --vanilla: #f3e5ab;
+  --caramel: #c68e17;
+
+  --primary-gradient: linear-gradient(
+    135deg,
+    var(--coffee-medium) 0%,
+    var(--caramel) 100%
+  );
+  --secondary-gradient: linear-gradient(
+    135deg,
+    var(--vanilla) 0%,
+    var(--cream) 100%
+  );
+  --background-gradient: linear-gradient(135deg, #f5f5dc 0%, #fafad2 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background-gradient);
+  min-height: 100vh;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(132, 204, 22, 0.15);
+}
+
+.brick-pattern {
+  background-image: linear-gradient(
+      135deg,
+      rgba(132, 204, 22, 0.1) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, rgba(132, 204, 22, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(132, 204, 22, 0.1) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(132, 204, 22, 0.1) 25%, transparent 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+.task-card {
+  @apply glass-morphism;
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(132, 204, 22, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(132, 204, 22, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(132, 204, 22, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Smooth drag animation */
+.task-drag {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lime-500 to-yellow-200;
+}
+
+/* New color utility classes */
+.bg-lime-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--lime-green) 0%,
+    var(--light-yellow) 100%
+  );
+}
+
+.bg-yellow-gradient {
+  background: linear-gradient(135deg, var(--light-yellow) 0%, #ffffff 100%);
+}
+
+.text-lime {
+  color: var(--lime-green);
+}
+
+.text-light-yellow {
+  color: var(--light-yellow);
+}
+
+.border-lime {
+  border-color: var(--lime-green);
+}
+
+.border-light-yellow {
+  border-color: var(--light-yellow);
+}
+
+.coffee-gradient-text {
+  background: linear-gradient(to right, var(--coffee-dark), var(--caramel));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 2s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.hover-lift-3d {
+  transition: all 0.3s ease;
+}
+
+.hover-lift-3d:hover {
+  transform: translateY(-5px) translateZ(20px) rotateX(2deg);
+  box-shadow: 0 10px 20px rgba(86, 60, 50, 0.1), 0 6px 6px rgba(86, 60, 50, 0.1);
+}
+
+.floating-animation {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.glass-coffee {
+  background: rgba(255, 253, 208, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(198, 142, 23, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(86, 60, 50, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.coffee-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 253, 208, 0.5),
+    rgba(198, 142, 23, 0.1)
+  );
+  border: 1px solid rgba(198, 142, 23, 0.2);
+  box-shadow: 0 10px 30px rgba(86, 60, 50, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
