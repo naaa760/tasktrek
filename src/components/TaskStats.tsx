@@ -116,7 +116,7 @@ function StatCard({
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="glass-coffee rounded-xl p-4 border border-coffee-light/20 hover:border-coffee-light/40 transition-all"
+      className="glass-coffee rounded-xl p-4 border border-coffee-light/20 hover:border-coffee-light/40 transition-all text-gray-800"
     >
       <div className={`flex items-center gap-2 ${color} mb-2`}>
         {icon}

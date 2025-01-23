@@ -37,7 +37,7 @@ export function TaskItem({
   return (
     <motion.div
       whileHover={{ scale: 1.02, rotateX: 2 }}
-      className="coffee-card rounded-xl p-6 hover-lift-3d"
+      className="coffee-card rounded-xl p-6 hover-lift-3d text-gray-800"
     >
       <div className="flex items-center gap-4">
         <motion.input
@@ -54,7 +54,7 @@ export function TaskItem({
               value={editContent}
               onChange={(e) => onEditChange(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && onSave(task.id)}
-              className="w-full px-4 py-2 glass-coffee rounded-lg text-coffee-dark focus:outline-none focus:ring-2 focus:ring-caramel/50"
+              className="w-full px-4 py-2 glass-coffee rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-caramel/50"
               autoFocus
             />
           ) : (
@@ -62,9 +62,7 @@ export function TaskItem({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className={`text-lg block ${
-                task.completed
-                  ? "line-through text-coffee-medium/50"
-                  : "text-coffee-dark coffee-gradient-text"
+                task.completed ? "line-through text-gray-500" : "text-gray-800"
               }`}
             >
               {task.content}

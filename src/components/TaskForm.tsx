@@ -31,7 +31,7 @@ export function TaskForm({
             type="text"
             value={newTask}
             onChange={(e) => onNewTaskChange(e.target.value)}
-            className="w-full px-6 py-4 bg-transparent text-white placeholder-indigo-200/60 focus:outline-none"
+            className="w-full px-6 py-4 bg-transparent text-gray-800 placeholder-gray-500/60 focus:outline-none"
             placeholder="What needs to be done?"
           />
         </motion.div>

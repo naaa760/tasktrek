@@ -46,7 +46,7 @@ export function SearchAndFilter({
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search tasks..."
-            className="w-full pl-10 pr-4 py-3 glass-coffee text-coffee-dark rounded-xl border border-coffee-light/20 placeholder-coffee-medium/60 focus:outline-none focus:ring-2 focus:ring-caramel/50 hover:border-coffee-light/40 transition-all"
+            className="w-full pl-10 pr-4 py-3 glass-coffee text-gray-800 rounded-xl border border-coffee-light/20 placeholder-gray-500/60 focus:outline-none focus:ring-2 focus:ring-caramel/50 hover:border-coffee-light/40 transition-all"
           />
         </div>
         <motion.button
